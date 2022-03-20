@@ -3,7 +3,9 @@
 # Задание 1
 
 select Пилоты.* from ( 
+
 select second_pilot_id from Рейсы where destination = 'Шереметьево' 
+
 group by second_pilot_id
 having count(*)=3) ) t left join Пилоты  
 on t.second_pilot_id = pilot_id
